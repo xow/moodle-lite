@@ -1,0 +1,41 @@
+<div class="promo-banner" layout="row"layout-align="center center">
+    <div flex="50">
+        <h1>Welcome to Moodle!</h1>
+        <h3>The world's leading open source learning platform.</h3>
+    </div>
+</div>
+
+
+<div layout="row" layout-align="center center">
+    <div flex="50">
+        <md-card layout="row">
+            <div flex="50" layout-padding>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Already have an account?</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-input-container class="md-block">
+                    <input ng-model="user.username" type="text" placeholder="Username" ng-required="true">
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <input ng-model="user.password" type="password" placeholder="Password" ng-required="true">
+                </md-input-container>
+                <div layout="row" layout-align="center center">
+                    <md-button class="md-raised md-primary">Login</md-button>
+                    <md-button ng-href="http://www.google.com" target="_blank">or create a new account</md-button>
+                </div>
+            </div>
+            <div layout="column" layout-padding>
+                <span id="other-login-panel" class="border-left" flex></span>
+            </div>
+            <div layout="row" layout-align="center center" layout-padding flex>
+                <div layout="column">
+                    <md-button class="md-raised">Log in as guest</md-button>
+                    <md-button class="md-raised facebook-button">Log in with Facebook</md-button>
+                </div>
+            </div>
+        </md-card>
+    </div>
+</div>
+

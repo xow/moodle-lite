@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body ng-app="MoodleLite">
+    <div ng-controller="AppCtrl" layout="column">
+        <header>
+            <md-toolbar class="main-toolbar md-whiteframe-z1 md-whiteframe-z1-add">
+                <div class="md-toolbar-tools">
+                    <md-button
+                        ng-click="toggleLeftMenu()"
+                        class="md-icon-button"
+                        aria-label="Settings">
+
+                        <md-icon>menu</md-icon>
+                    </md-button>
+                    <img class="logo" src="/assets/img/moodle-logo.svg" alt="Moodle logo"></img>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Search">
+                        <md-icon>search</md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Messages">
+                        <md-icon>mail</md-icon>
+                    </md-button>
+                    <md-button
+                        class="md-icon-button"
+                        ng-click="toggleRightMenu()"
+                        aria-label="Contacts">
+
+                        <md-icon>person</md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+        </header>
+
+        <md-sidenav class="left-navigation md-sidenav-left md-whiteframe-z2" md-component-id="left">
+            <md-toolbar class="md-theme-light">
+                <header>
+                    <img src="/assets/img/me.jpg" class="md-avatar" alt="profile picture"></img>
+                    <h2>Ryan Wyllie</h2>
+                </header>
+
+            </md-toolbar>
+
+            <md-content>
+                <ul class="navigation-list">
+                    <li>
+                        <a href="#/profiles" alt="profile" layout="row" layout-align="left center">
+                            <md-icon>person</md-icon>
+                            <h3>Profile</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/dashboards" alt="dashboard" layout="row" layout-align="left center">
+                            <md-icon>dashboard</md-icon>
+                            <h3>Dashboard</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/courses" alt="courses" layout="row" layout-align="left center">
+                            <md-icon>assignment</md-icon>
+                            <h3>Courses</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/grades" alt="grades" layout="row" layout-align="left center">
+                            <md-icon>grade</md-icon>
+                            <h3>Grades</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/calendars" alt="calendar" layout="row" layout-align="left center">
+                            <md-icon>event</md-icon>
+                            <h3>Calendar</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/preferences" alt="preferences" layout="row" layout-align="left center">
+                            <md-icon>settings</md-icon>
+                            <h3>Preferences</h3>
+                        </a>
+                    </li>
+                </ul>
+            </md-content>
+        </md-sidenav>
+
+        <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools">Sidenav Right</h1>
+            </md-toolbar>
+        </md-sidenav>
+
+        <md-content ng-view>
+
+        </md-content>
+    </div>
+
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/controllers.js"></script>
+</body>
+</html>
