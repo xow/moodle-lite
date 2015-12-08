@@ -97,6 +97,48 @@
         <md-content ng-view>
 
         </md-content>
+        <div ng-controller="MessageCentreCtrl">
+            <md-fab-toolbar md-open="messageCentre.isOpen" md-direction="left" class="message-centre">
+                <md-fab-trigger class="align-with-text">
+                    <md-button aria-label="Message center" class="md-fab md-primary">
+                        <md-icon>chat</md-icon>
+                    </md-button>
+                </md-fab-trigger>
+                <md-toolbar>
+                    <md-fab-actions class="md-toolbar-tools">
+                    </md-fab-actions>
+                </md-toolbar>
+            </md-fab-toolbar>
+            <div class="chats" layout="row">
+                <md-card class="chat" ng-show="messageCentre.isOpen" flex ng-repeat="chat in messageCentre.chats">
+                    <md-toolbar class="md-primary" layout="row" layout-align="center center" layout-padding>
+                        <h2>
+                            <!--<md-icon>chat_bubble</md-icon>-->
+                            {{chat.fullname}}
+                        </h2>
+                        <span flex></span>
+                        <md-button class="md-icon-button"><md-icon>close</md-icon></md-button>
+                    </md-toolbar>
+                    <md-card-content class="md">
+                        <md-list class="messages">
+                            <md-list-item class="md-2-line" ng-repeat="message in chat.messages">
+                                <img ng-src="/assets/img/{{chat.image}}" class="md-avatar" ng-if="message.incoming" />
+                                <div class="md-list-item-text">
+                                    <p>{{message.text}}<p>
+                                </div>
+                                <img ng-src="/assets/img/{{me.image}}" class="md-avatar" ng-if="!message.incoming" />
+                            </md-list-item>
+                        </md-list>
+                    </md-card-content>
+                    <md-card-footer>
+                        <md-input-container flex>
+                            <label>Type a message</label>
+                            <input ng-model="chat.response">
+                        </md-input-container>
+                    </md-card-footer>
+                </md-card>
+            </div>
+        </div>
     </div>
 
     <script src="/bower_components/angular/angular.js"></script>

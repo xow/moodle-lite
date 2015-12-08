@@ -87,3 +87,57 @@ md-content {
     background: rgb(255,255,255);
     padding: 0.3em;
 }
+
+.message-centre {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.chats {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 20;
+    overflow: hidden;
+}
+.chat {
+    display: inline-block;
+    height: 400px;
+    width: 250px;
+}
+.chat.ng-hide-add,
+.chat.ng-hide-remove {
+    transition: all linear 150ms;
+}
+
+.chat.ng-hide {
+    height: 0px;
+}
+
+.chat h2 {
+    font-size: 1em;
+    padding: 0px;
+    height: 1.2em;
+    width: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chat md-toolbar {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.chat md-card-footer {
+    bottom: 0px;
+    position: absolute;
+}
+
+.messages {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 230px;
+}
